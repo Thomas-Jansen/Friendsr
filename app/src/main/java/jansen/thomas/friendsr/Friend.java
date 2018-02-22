@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Friend implements Serializable {
 
+//  Initiate variables for class Friend
     private String name, bio;
     private int drawableId;
     private float rating;
@@ -13,7 +14,7 @@ public class Friend implements Serializable {
         this.bio = bio;
         this.drawableId = drawableId;
     }
-
+//  Getters for variables
     public String getName() {
         return name;
     }
@@ -30,7 +31,10 @@ public class Friend implements Serializable {
         return rating;
     }
 
+//  Setters for variables
     public void setRating(float rating) {
         this.rating = rating;
     }
+
+    public void setBio(String bio) { this.bio = bio; }
 }

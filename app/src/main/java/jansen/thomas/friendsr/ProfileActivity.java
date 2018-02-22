@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -22,18 +24,21 @@ public class ProfileActivity extends AppCompatActivity {
         retrievedFriend = (Friend) intent.getSerializableExtra("clicked_friend");
         String name = retrievedFriend.getName();
 
-
         SharedPreferences prefs = getSharedPreferences("settings", MODE_PRIVATE);
         Float stored_rating = prefs.getFloat("rating" + name , 0.0f);
         if (stored_rating != 0.0) {
             retrievedFriend.setRating(stored_rating);
+        }
+        String Bio = prefs.getString("Bio" + name, "DEFAULT");
+        if (Bio != "DEFAULT") {
+            retrievedFriend.setBio(Bio);
         }
 
         String bio = retrievedFriend.getBio();
         int fotoid = retrievedFriend.getDrawableId();
         float rated = retrievedFriend.getRating();
         TextView textViewname = findViewById(R.id.textViewName2);
-        TextView textViewbio = findViewById(R.id.textViewBio2);
+        TextView textViewbio = findViewById(R.id.editTextBio);
         ImageView imageViewface = findViewById(R.id.imageViewFace2);
         RatingBar ratingbar = (RatingBar) findViewById(R.id.ratingBarFriend);
         textViewname.setText(name);
@@ -42,6 +47,9 @@ public class ProfileActivity extends AppCompatActivity {
         ratingbar.setRating(rated);
 
         ratingbar.setOnRatingBarChangeListener(new OnRatingBarChangeListener());
+        textViewbio.addTextChangedListener(new TextChangedListener());
+
+
     }
 
     private class OnRatingBarChangeListener implements RatingBar.OnRatingBarChangeListener {
@@ -53,6 +61,28 @@ public class ProfileActivity extends AppCompatActivity {
             String name = retrievedFriend.getName();
             editor.putFloat("rating" + name , rating);
             editor.apply();
+        }
+    }
+
+    private class TextChangedListener implements TextWatcher {
+
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            String newBio = charSequence.toString();
+            SharedPreferences.Editor editor = getSharedPreferences("settings", MODE_PRIVATE).edit();
+            String name = retrievedFriend.getName();
+            editor.putString("Bio" + name , newBio);
+            editor.apply();
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
         }
     }
 }
