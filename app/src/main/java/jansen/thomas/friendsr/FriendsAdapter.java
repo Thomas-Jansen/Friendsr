@@ -30,13 +30,10 @@ public class FriendsAdapter extends ArrayAdapter<Friend> {
         }
         Friend currentFriend = friends.get(position);
         String name = currentFriend.getName();
-//        String bio = currentFriend.getBio();
         int fotoid = currentFriend.getDrawableId();
         TextView textViewname = convertView.findViewById(R.id.textViewName);
-//        TextView textViewbio = convertView.findViewById(R.id.textViewBio);
         ImageView imageViewface = convertView.findViewById(R.id.ImageViewFace);
         textViewname.setText(name);
-//        textViewbio.setText(bio);
         imageViewface.setImageResource(fotoid);
         return convertView;
     }
