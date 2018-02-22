@@ -35,7 +35,7 @@ public class ProfileActivity extends AppCompatActivity {
         TextView textViewname = findViewById(R.id.textViewName2);
         TextView textViewbio = findViewById(R.id.textViewBio2);
         ImageView imageViewface = findViewById(R.id.imageViewFace2);
-        RatingBar ratingbar = (RatingBar) findViewById(R.id.RatingBarFriend);
+        RatingBar ratingbar = (RatingBar) findViewById(R.id.ratingBarFriend);
         textViewname.setText(name);
         textViewbio.setText(bio);
         imageViewface.setImageResource(fotoid);

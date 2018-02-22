@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     Friend jon = new Friend("Jon", "I know nothing", R.drawable.jon);
     Friend arya = new Friend("Arya", "All men must die", R.drawable.arya);
     Friend cersei = new Friend("Cersei", "Kill them all!", R.drawable.cersei);
-    Friend daenerys = new Friend("Daenerys", "Daenerys Stormborn of the House Targaryen, " +
+    Friend daenerys = new Friend("Daenerys", "I am Daenerys Stormborn of the House Targaryen, " +
             "First of Her Name, the Unburnt, Queen of the Andals and the First Men, Khaleesi of the " +
             "Great Grass Sea, Breaker of Chains, and Mother of Dragons", R.drawable.daenerys);
     Friend jaime = new Friend("Jaime", "The things I do for love", R.drawable.jaime);
