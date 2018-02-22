@@ -17,6 +17,7 @@ public class FriendsAdapter extends ArrayAdapter<Friend> {
 
     ArrayList<Friend> friends;
 
+//  FriendsAdapter receives an ArrayList with Friends from Main
     public FriendsAdapter(@NonNull Context context, int resource, @NonNull ArrayList<Friend> objects) {
         super(context, resource, objects);
         friends = objects;
@@ -28,6 +29,7 @@ public class FriendsAdapter extends ArrayAdapter<Friend> {
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.grid_item, parent, false);
         }
+//      For every grid_item find the variables in currentFriend and link it with its View
         Friend currentFriend = friends.get(position);
         String name = currentFriend.getName();
         int fotoid = currentFriend.getDrawableId();

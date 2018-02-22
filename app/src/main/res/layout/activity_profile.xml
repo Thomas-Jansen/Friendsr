@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.25"
+        android:layout_weight="0.50"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
         android:text="TextView"
@@ -41,8 +41,14 @@
         android:id="@+id/editTextBio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:layout_weight="1.5"
         android:ems="10"
-        android:inputType="textPersonName" />
+        android:inputType="textImeMultiLine"
+        android:lines="8"
+        android:minLines="6"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:scrollHorizontally="false"
+        android:scrollbars="none" />
 
 </LinearLayout>
