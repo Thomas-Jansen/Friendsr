@@ -29,7 +29,7 @@ public class ProfileActivity extends AppCompatActivity {
         if (stored_rating != 0.0) {
             retrievedFriend.setRating(stored_rating);
         }
-        String Bio = prefs.getString("Bio" + name, "DEFAULT");
+        String Bio = prefs.getString("Bio" + name, "");
         if (Bio != "") {
             retrievedFriend.setBio(Bio);
         }
