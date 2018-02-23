@@ -30,9 +30,10 @@ public class ProfileActivity extends AppCompatActivity {
             retrievedFriend.setRating(stored_rating);
         }
         String Bio = prefs.getString("Bio" + name, "DEFAULT");
-        if (Bio != "DEFAULT") {
+        if (Bio != "") {
             retrievedFriend.setBio(Bio);
         }
+
 //      Get all other variables, their corresponding views and link them
         String bio = retrievedFriend.getBio();
         int fotoid = retrievedFriend.getDrawableId();
